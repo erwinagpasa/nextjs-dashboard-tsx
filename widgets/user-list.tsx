@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
+import { EllipsisVerticalIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -105,7 +105,7 @@ export const UserList = (props: { data: any[]; }) => {
                       <Menu as="div" className="relative ml-3">
                         <div>
                           <Menu.Button className="flex text-slate-600 text-sm focus:outline-none hover:text-gray-900">
-                            <EllipsisHorizontalIcon className="text-slate-400 h-6 w-6" aria-hidden="true" />
+                            <EllipsisVerticalIcon className="text-slate-400 h-5 w-5" aria-hidden="true" />
                           </Menu.Button>
                         </div>
                         <Transition
@@ -117,7 +117,7 @@ export const UserList = (props: { data: any[]; }) => {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                          <Menu.Items className="absolute z-10 right-0 mt-2 w-48 rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item>
                               <Link href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                 View
@@ -135,12 +135,9 @@ export const UserList = (props: { data: any[]; }) => {
                   </tr>
                 ))
               }
-
-
-
-            </tbody >
-          </table >
-        </div >
+            </tbody>
+          </table>
+        </div>
         {/* Body end */}
         {/* Pagination */}
         <div className="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-200 sm:grid-cols-9">
