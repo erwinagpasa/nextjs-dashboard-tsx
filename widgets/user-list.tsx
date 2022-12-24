@@ -1,36 +1,57 @@
+import Link from 'next/link'
 import Image from 'next/image'
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/outline'
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-export const UserList = () => {
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ')
+}
+
+
+
+
+
+export const UserList = (props: { data: any[]; }) => {
   return (
     <div className="mt-4 mx-4">
       <div className="w-full overflow-hidden rounded-lg">
         {/* Body */}
         <div className="overflow-x-auto relative">
-
           <div className="flex flex-wrap items-center px-4 py-2 bg-white">
             <div className="relative w-full max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-gray-900">Latest Transactions</h3>
             </div>
 
             <div className="relative inline-block text-left dropdown pt-3 pr-4">
-              <span className="rounded-md shadow-sm">
-                <button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium leading-5 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800"
-                  type="button" aria-haspopup="true" aria-expanded="true" aria-controls="headlessui-menu-items-117">
-                  <span>Filter</span>
-                  <svg className="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-              </span>
-              <div className="opacity-0 invisible dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95">
-                <div className="absolute  w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none" aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                  <div className="py-1">
-                    <a href="javascript:void(0)" tabIndex={0} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Account settings</a>
-                    <a href="javascript:void(0)" tabIndex={1} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Support</a>
-                    <span role="menuitem" tabIndex={-1} className="flex justify-between w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 cursor-not-allowed opacity-50" aria-disabled="true">New feature (soon)</span>
-                    <a href="javascript:void(0)" tabIndex={2} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >License</a>
-                  </div>
-                  <div className="py-1"><a href="javascript:void(0)" tabIndex={3} className="text-gray-700 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left" role="menuitem" >Sign out</a></div>
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+                    Filter
+                    <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                  </Menu.Button>
                 </div>
-              </div>
+
+                <Transition as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95">
+
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item><a href="/" className="block px-4 py-2 text-sm">Manama Bahrain</a></Menu.Item>
+                      <Menu.Item><a href="/" className="block px-4 py-2 text-sm">GuangZhou China</a></Menu.Item>
+                      <Menu.Item><a href="/" className="block px-4 py-2 text-sm">Yiwu China</a></Menu.Item>
+                      <Menu.Item><a href="/" className="block px-4 py-2 text-sm">Dasmariñas Philippines</a></Menu.Item>
+                      <Menu.Item><a href="/" className="block px-4 py-2 text-sm">Valenzuela Philippines</a></Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </div>
 
             <div className="relative pt-3">
@@ -57,134 +78,69 @@ export const UserList = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white border-b  hover:bg-gray-50">
-                <td className="p-4 w-4">
-                  <div className="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2" />
-                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                  </div>
-                </td>
-                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
-                  <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
-                  <div className="pl-3">
-                    <div className="text-base font-semibold">Erwin Agpasa</div>
-                    <div className="font-normal text-gray-500">erwin@devph.io</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">React Developer</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                    Online
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <a href="#" className="font-medium text-blue-600  hover:underline">Edit user</a>
-                </td>
-              </tr>
-              <tr className="bg-white border-b  hover:bg-gray-50 ">
-                <td className="p-4 w-4">
-                  <div className="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500" />
-                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                  </div>
-                </td>
-                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
-                  <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
-                  <div className="pl-3">
-                    <div className="text-base font-semibold">Erwin Agpasa</div>
-                    <div className="font-normal text-gray-500">erwin@devph.io</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">React Developer</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                    Online
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <a href="#" className="font-medium text-blue-600 hover:underline">Edit user</a>
-                </td>
-              </tr>
-              <tr className="bg-white border-b hover:bg-gray-50">
-                <td className="p-4 w-4">
-                  <div className="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500  focus:ring-2" />
-                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                  </div>
-                </td>
-                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
-                  <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
-                  <div className="pl-3">
-                    <div className="text-base font-semibold">Erwin Agpasa</div>
-                    <div className="font-normal text-gray-500">erwin@devph.io</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">React Developer</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                    Online
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <a href="#" className="font-medium text-blue-600 hover:underline">Edit user</a>
-                </td>
-              </tr>
-              <tr className="bg-white border-b hover:bg-gray-50">
-                <td className="p-4 w-4">
-                  <div className="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2 " />
-                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                  </div>
-                </td>
-                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
-                  <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
-                  <div className="pl-3">
-                    <div className="text-base font-semibold">Erwin Agpasa</div>
-                    <div className="font-normal text-gray-500">erwin@devph.io</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">React Developer</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                    Online
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <a href="#" className="font-medium text-blue-600 hover:underline">Edit user</a>
-                </td>
-              </tr>
-              <tr className="bg-white border-b hover:bg-gray-50 ">
-                <td className="p-4 w-4">
-                  <div className="flex items-center">
-                    <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500  focus:ring-2" />
-                    <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
-                  </div>
-                </td>
-                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
-                  <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
-                  <div className="pl-3">
-                    <div className="text-base font-semibold">Erwin Agpasa</div>
-                    <div className="font-normal text-gray-500">erwin@devph.io</div>
-                  </div>
-                </td>
-                <td className="py-4 px-6">React Developer</td>
-                <td className="py-4 px-6">
-                  <div className="flex items-center">
-                    <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                    Online
-                  </div>
-                </td>
-                <td className="py-4 px-6">
-                  <a href="#" className="font-medium text-blue-600 hover:underline">Edit user</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+              {
+                props.data.map((content) => (
+                  <tr key={content.id} className="bg-white border-b hover:bg-gray-50">
+                    <td className="p-4 w-4">
+                      <div className="flex items-center">
+                        <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500  focus:ring-2" />
+                        <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
+                      </div>
+                    </td>
+                    <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
+                      <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
+                      <div className="pl-3">
+                        <div className="text-base font-semibold">{content.first_name} {content.last_name}</div>
+                        <div className="font-normal text-gray-500">{content.email}</div>
+                      </div>
+                    </td>
+                    <td className="py-4 px-6">React Developer</td>
+                    <td className="py-4 px-6">
+                      <div className="flex items-center">
+                        <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
+                        Online
+                      </div>
+                    </td>
+                    <td className="py-4 px-6">
+                      <Menu as="div" className="relative ml-3">
+                        <div>
+                          <Menu.Button className="flex text-slate-600 text-sm focus:outline-none hover:text-gray-900">
+                            <EllipsisHorizontalIcon className="text-slate-400 h-6 w-6" aria-hidden="true" />
+                          </Menu.Button>
+                        </div>
+                        <Transition
+                          as={Fragment}
+                          enter="transition ease-out duration-100"
+                          enterFrom="transform opacity-0 scale-95"
+                          enterTo="transform opacity-100 scale-100"
+                          leave="transition ease-in duration-75"
+                          leaveFrom="transform opacity-100 scale-100"
+                          leaveTo="transform opacity-0 scale-95"
+                        >
+                          <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                            <Menu.Item>
+                              <Link href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                View
+                              </Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                              <Link href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                Edit
+                              </Link>
+                            </Menu.Item>
+                          </Menu.Items>
+                        </Transition>
+                      </Menu>
+                    </td>
+                  </tr>
+                ))
+              }
+
+
+
+            </tbody >
+          </table >
+        </div >
         {/* Body end */}
         {/* Pagination */}
         <div className="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-200 sm:grid-cols-9">
