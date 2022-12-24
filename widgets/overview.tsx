@@ -1,5 +1,9 @@
 import Link from 'next/link'
-import { TruckIcon, ShoppingCartIcon, WalletIcon } from '@heroicons/react/24/outline'
+import {
+  TruckIcon,
+  ShoppingCartIcon,
+  WalletIcon
+} from '@heroicons/react/24/outline'
 
 export const Overview = () => {
   return (
