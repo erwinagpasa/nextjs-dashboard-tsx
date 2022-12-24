@@ -7,6 +7,8 @@ import { ActiveOrders } from '../widgets/active-orders'
 import { UserList } from '../widgets/user-list'
 import { GoogleMappage } from '../widgets/google-map'
 import { Overview } from '../widgets/overview'
+import data from "../data/profile.json";
+
 
 export default function Home() {
   return (
@@ -44,7 +46,7 @@ export default function Home() {
           <RecentActivities />
         </div> */}
 
-          <UserList />
+          <UserList data={data} />
 
           <div className="mt-8 mx-4">
             <div className="grid grid-cols-1 md:grid-cols-2">
