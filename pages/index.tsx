@@ -1,14 +1,12 @@
 import Head from 'next/head'
 import { MainNavbar } from '../components/navbar'
 import { Sidebar } from '../components/sidebar'
-import { Address } from '../widgets/Address'
-
-
-import { ContactForm } from '../widgets/ContacForm'
-import { ActiveOrders } from '../widgets/ActiveOrders'
-import { UserList } from '../widget/UserList'
-import { GoogleMappage } from '../widget/GoogleMap'
-import { Overview } from '../widget/Overview'
+import { Address } from '../widgets/address'
+import { ContactForm } from '../widgets/contact-form'
+import { ActiveOrders } from '../widgets/active-orders'
+import { UserList } from '../widgets/user-list'
+import { GoogleMappage } from '../widgets/google-map'
+import { Overview } from '../widgets/overview'
 
 export default function Home() {
   return (
