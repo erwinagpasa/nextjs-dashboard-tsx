@@ -73,6 +73,7 @@ export const UserList = (props: { data: any[]; }) => {
                 </th>
                 <th scope="col" className="py-3 px-6">Transaction</th>
                 <th scope="col" className="py-3 px-6">Process Date</th>
+                <th scope="col" className="py-3 px-6">Origin</th>
                 <th scope="col" className="py-3 px-6">Status</th>
                 <th scope="col" className="py-3 px-6">Action</th>
               </tr>
@@ -95,6 +96,7 @@ export const UserList = (props: { data: any[]; }) => {
                       </div>
                     </td>
                     <td className="py-4 px-6 text-sm text-slate-600">{content.process_date}</td>
+                    <td className="py-4 px-6 text-sm text-slate-600">{content.origin}</td>
                     <td className="py-4 px-6">
                       <span className={`${content.text_color} ${content.status_bg} px-3 py-1 ml-auto text-xs font-medium tracking-wide rounded-full`}>{content.status}</span>
                     </td>

@@ -5,7 +5,7 @@
     "first_name": "Prescott",
     "last_name": "Radloff",
     "process_date": "December 25, 2022",
-    "email": "pradloff0@telegraph.co.uk",
+    "origin": "GuangZhou",
     "status": "Warehouse",
     "text_color": "text-white",
     "status_bg": "bg-sky-300"
@@ -16,7 +16,7 @@
     "process_date": "January 5, 2023",
     "first_name": "Buddy",
     "last_name": "Speere",
-    "email": "bspeere1@mail.ru",
+    "origin": "Dasmariñas",
     "status": "In transit",
     "text_color": "text-blue-500",
     "status_bg": "bg-slate-200"
@@ -27,7 +27,7 @@
     "process_date": "January 28, 2023",
     "first_name": "Oates",
     "last_name": "Kull",
-    "email": "okull2@bloglovin.com",
+    "origin": "Yiwu",
     "status": "Out for delivery",
     "text_color": "text-emerald-500",
     "status_bg": "bg-slate-200"
@@ -38,7 +38,7 @@
     "process_date": "March 10, 2023",
     "first_name": "Alwyn",
     "last_name": "Edney",
-    "email": "aedney3@nsw.gov.au",
+    "origin": "Valenzuela",
     "status": "Received",
     "text_color": "text-white",
     "status_bg": "bg-emerald-500"
@@ -49,7 +49,7 @@
     "process_date": "May 21, 2023",
     "first_name": "Bernice",
     "last_name": "Braywood",
-    "email": "bbraywood4@wordpress.org",
+    "origin": "Bahrain",
     "status": "Failed",
     "text_color": "text-white",
     "status_bg": "bg-red-300"
