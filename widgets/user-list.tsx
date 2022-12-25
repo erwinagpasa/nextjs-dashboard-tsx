@@ -71,8 +71,8 @@ export const UserList = (props: { data: any[]; }) => {
                     <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                   </div>
                 </th>
-                <th scope="col" className="py-3 px-6">Name</th>
-                <th scope="col" className="py-3 px-6">Position</th>
+                <th scope="col" className="py-3 px-6">Transaction</th>
+                <th scope="col" className="py-3 px-6">Process Date</th>
                 <th scope="col" className="py-3 px-6">Status</th>
                 <th scope="col" className="py-3 px-6">Action</th>
               </tr>
@@ -90,16 +90,13 @@ export const UserList = (props: { data: any[]; }) => {
                     <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap">
                       <Image src="/erwin.jpg" alt="Picture of the author" width={40} height={40} className="object-cover rounded-full" loading="lazy" />
                       <div className="pl-3">
-                        <div className="text-base font-semibold">{content.first_name} {content.last_name}</div>
-                        <div className="font-normal text-gray-500">{content.email}</div>
+                        <div className="text-sm font-bold text-slate-600">{content.transaction}</div>
+                        <div className="text-xs text-slate-500">{content.first_name} {content.last_name}</div>
                       </div>
                     </td>
-                    <td className="py-4 px-6">React Developer</td>
+                    <td className="py-4 px-6 text-sm text-slate-600">{content.process_date}</td>
                     <td className="py-4 px-6">
-                      <div className="flex items-center">
-                        <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div>
-                        Online
-                      </div>
+                      <span className={`${content.text_color} ${content.status_bg} px-3 py-1 ml-auto text-xs font-medium tracking-wide rounded-full`}>{content.status}</span>
                     </td>
                     <td className="py-4 px-6">
                       <Menu as="div" className="relative ml-3">
@@ -173,6 +170,6 @@ export const UserList = (props: { data: any[]; }) => {
         </div>
         {/* Pagination end */}
       </div>
-    </div>
+    </div >
   );
 }
