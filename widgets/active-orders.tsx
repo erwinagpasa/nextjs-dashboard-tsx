@@ -45,9 +45,9 @@ export const ActiveOrders = () => {
                   <li className="rb-item" ng-repeat="itembx">
                     <a href="#" className="relative flex flex-row ">
                       <span className="text-sm font-bold text-slate-600">GuangZhou China</span>
-                      <span className="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-slate-500 bg-slate-200 rounded-full">Received by logistics</span>
+                      <span className="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-slate-500 bg-slate-200 rounded-full">Warehouse</span>
                     </a>
-                    <small className="text-xs  text-slate-500">3rd May 2020 7:00 PM</small>
+                    <small className="text-xs text-slate-500">3rd May 2020 7:00 PM</small>
                   </li>
 
                   <li className="rb-item" ng-repeat="itembx">
