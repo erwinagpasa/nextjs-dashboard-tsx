@@ -6,6 +6,7 @@
     "last_name": "Radloff",
     "process_date": "December 25, 2022",
     "origin": "GuangZhou",
+    "destination": "Bangkok",
     "status": "Warehouse",
     "text_color": "text-white",
     "status_bg": "bg-sky-300"
@@ -17,6 +18,7 @@
     "first_name": "Buddy",
     "last_name": "Speere",
     "origin": "Dasmariñas",
+    "destination": "Orlando",
     "status": "In transit",
     "text_color": "text-blue-500",
     "status_bg": "bg-slate-200"
@@ -28,6 +30,7 @@
     "first_name": "Oates",
     "last_name": "Kull",
     "origin": "Yiwu",
+    "destination": "Ilocos Norte",
     "status": "Out for delivery",
     "text_color": "text-emerald-500",
     "status_bg": "bg-slate-200"
@@ -39,6 +42,7 @@
     "first_name": "Alwyn",
     "last_name": "Edney",
     "origin": "Valenzuela",
+    "destination": "Manama",
     "status": "Received",
     "text_color": "text-white",
     "status_bg": "bg-emerald-500"
@@ -50,6 +54,7 @@
     "first_name": "Bernice",
     "last_name": "Braywood",
     "origin": "Bahrain",
+    "destination": "Philppines",
     "status": "Failed",
     "text_color": "text-white",
     "status_bg": "bg-red-300"
