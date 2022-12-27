@@ -14,8 +14,7 @@ export const ContactForm = () => {
         <textarea id="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Leave a comment..."></textarea>
       </div>
 
-
-      <button type="submit" className="md:w-32 bg-slate-300 text-slate-500 hover:text-slate-100 py-2 px-3 rounded-lg mt-4 hover:bg-slate-500 transition ease-in-out duration-300">Submit</button>
+      <button type="submit" className="md:w-32 bg-gray-200 text-slate-500 hover:text-slate-100 py-2 px-3 rounded-lg mt-4 hover:bg-slate-500 transition ease-in-out duration-300">Submit</button>
     </form>
   );
 }
