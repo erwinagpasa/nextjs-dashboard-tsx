@@ -11,7 +11,7 @@ export const Overview = () => {
       <div className="bg-slate-100 rounded-md flex items-center justify-center pl-3 text-slate-700 font-medium group">
         <Link className="text-center block w-full relative " href="/">
           <span>Logistics Dashboard</span>
-          <span className="block text-xs text-gray-500">Version 1.0.0 | Build 3</span>
+          <span className="block text-xs text-gray-500">Version 1.0.0 | Build 4</span>
         </Link>
       </div>
 
